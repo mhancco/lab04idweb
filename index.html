@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gestor de tareas universitarias</title>
+  <link rel="stylesheet" href="assets/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-light">
+  <header>
+    <nav class="navbar bg-primary" data-bs-theme="dark">
+      <div class="container">
+        <span class="navbar-brand">Gestor de tareas universitarias</span>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container py-4">
+    <section class="card mb-4">
+      <div class="card-body">
+        <h1 class="h4 card-title">Nueva tarea</h1>
+        <div id="alertas" role="alert" aria-live="polite"></div>
+
+        <form id="form-tarea" class="row g-3" novalidate>
+          <div class="col-md-5">
+            <label for="titulo" class="form-label">Título</label>
+            <input type="text" id="titulo" name="titulo" class="form-control" maxlength="100">
+          </div>
+          <div class="col-md-4">
+            <label for="curso" class="form-label">Curso</label>
+            <input type="text" id="curso" name="curso" class="form-control" maxlength="60">
+          </div>
+          <div class="col-md-3">
+            <label for="fecha-entrega" class="form-label">Fecha de entrega</label>
+            <input type="date" id="fecha-entrega" name="fechaEntrega" class="form-control">
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">Agregar tarea</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-body">
+        <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+          <h2 class="h4 mb-0">Mis tareas</h2>
+          <div id="filtros" class="btn-group" role="group" aria-label="Filtrar tareas">
+            <button type="button" class="btn btn-outline-primary active" data-filtro="todas">Todas</button>
+            <button type="button" class="btn btn-outline-primary" data-filtro="pendientes">Pendientes</button>
+            <button type="button" class="btn btn-outline-primary" data-filtro="completadas">Completadas</button>
+          </div>
+        </div>
+
+        <p id="resumen" class="text-muted small"></p>
+        <ul id="lista-tareas" class="list-group"></ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+.tarea-completada {
+  background-color: #f1f3f5;
+}
+
+.tarea-completada .tarea-titulo {
+  text-decoration: line-through;
+  color: #6c757d;
+}
+
+.tarea-info {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
